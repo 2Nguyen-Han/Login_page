@@ -9,15 +9,15 @@ class ForgotPassword extends StatefulWidget {
 
 class _ForgotPasswordState extends State<ForgotPassword> {
   final _formKey = GlobalKey<FormState>();
-
   String _userEmail = '';
   void _trySubmitForm() {
     final bool? isValid = _formKey.currentState?.validate();
     if (isValid == true) {
       debugPrint(_userEmail);
-
     }
   }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -122,12 +122,13 @@ class _ForgotPasswordState extends State<ForgotPassword> {
         onTap: () {
           // _trySubmitForm();
           if(_formKey.currentState!.validate()){
-            return;
-          }else{
+
             Navigator.pushNamed(context, "OtpVerification");
+          }else{
+            _trySubmitForm();
           }
-          // Navigator.pushNamed(context, "OtpVerification");
-        },
+
+          },
         child: Container(
           padding: const EdgeInsets.symmetric(
               vertical: 20, horizontal: 10),

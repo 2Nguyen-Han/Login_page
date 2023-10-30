@@ -107,7 +107,6 @@ class _OtpVerificationState extends State<OtpVerification> {
 
                   height: MediaQuery.of(context).size.height,
                   width: double.infinity,
-
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -187,6 +186,7 @@ class _OtpVerificationState extends State<OtpVerification> {
                             onTap: () {
                               // _trySubmitForm();
                               Navigator.pushNamed(context, "ChangePassword");
+
                             },
                             child: Container(
                               padding: const EdgeInsets.symmetric(
